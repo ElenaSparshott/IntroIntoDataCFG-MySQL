@@ -17,3 +17,20 @@ VALUE
 ("Lewis Hendry", "1 Ficton Avenue, Glascow, GL1 6HH", 20, 20, 20 );
 
 SELECT * FROM Customers;
+
+-- update Polly balance to 20
+UPDATE Customers
+SET Balance = 20
+WHERE FullName = "Polly Moore";
+
+-- Disablng safe mode
+SET SQL_SAFE_UPDATES = 0;
+
+-- Update Lewis's Address
+UPDATE Customers
+SET Address = "22 Not A Real Lane, Glascow, GL6 6NN"
+WHERE FullName = "Lewis Hendry";
+
+-- Delete record where balance is 20
+DELETE FROM Customers
+WHERE Balance = 20;
